@@ -10,19 +10,19 @@ import com.example.ktdemo.App
 import com.example.ktdemo.R
 import com.example.ktdemo.weight.BannerView
 import com.newnet.lotteryprinter.adapter.DigitalNewAdapter
+import kotlinx.android.synthetic.main.activity_main.recycler_list
 
 class MainActivity : TransparentActivity() {
 
 
     var bannerView:BannerView?=null
-    var recy_list: RecyclerView?=null
+
     var digitalNewAdapter:DigitalNewAdapter?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
          bannerView = findViewById(R.id.banner)
-         recy_list  = findViewById(R.id.recycler_list)
         initBanner()
         initList()
         initData()
@@ -45,9 +45,9 @@ class MainActivity : TransparentActivity() {
     private fun initList(){
         val linearLayoutManager = LinearLayoutManager(this)
         linearLayoutManager.orientation = LinearLayoutManager.VERTICAL
-        recy_list?.layoutManager=linearLayoutManager
+        recycler_list?.layoutManager=linearLayoutManager
         digitalNewAdapter= DigitalNewAdapter(R.layout.item_digital)
-        recy_list?.adapter=digitalNewAdapter
+        recycler_list?.adapter=digitalNewAdapter
 
     }
 
