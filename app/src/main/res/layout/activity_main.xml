@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity">
+
+  <RelativeLayout
+      android:gravity="center"
+      android:id="@+id/relati_bounsc_fl"
+      android:layout_width="match_parent"
+      android:layout_height="48dp"
+      android:layout_marginTop="27dp">
+      <TextView
+          android:id="@+id/title_bouncs"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="首页"
+          android:textColor="#333333"
+          android:textSize="16dp" />
+
+
+  </RelativeLayout>
+
+  <com.example.ktdemo.weight.BannerView
+      android:id="@+id/banner"
+      android:layout_width="match_parent"
+      android:layout_height="200dp">
+
+  </com.example.ktdemo.weight.BannerView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>
