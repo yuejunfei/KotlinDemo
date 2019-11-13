@@ -8,9 +8,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.danikula.videocache.HttpProxyCacheServer
 import com.example.ktdemo.App
 import com.example.ktdemo.R
+import com.example.ktdemo.bean.LotteryBean
 import com.example.ktdemo.weight.BannerView
+import com.google.gson.Gson
+import com.google.gson.JsonObject
 import com.newnet.lotteryprinter.adapter.DigitalNewAdapter
+import com.squareup.okhttp.Request
+import com.zhy.http.okhttp.OkHttpUtils
+import com.zhy.http.okhttp.callback.StringCallback
 import kotlinx.android.synthetic.main.activity_main.recycler_list
+import java.lang.Exception
 
 class MainActivity : TransparentActivity() {
 
@@ -32,12 +39,30 @@ class MainActivity : TransparentActivity() {
 
     private fun  initData(){
 
-        var arrayList = ArrayList<String>()
-        for (i in 1..100){
-            arrayList.add(""+i)
-        }
-        Log.d("jdsijfsi",""+arrayList.size)
-        digitalNewAdapter?.setNewData(arrayList)
+//        var arrayList = ArrayList<String>()
+//        for (i in 1..100){
+//            arrayList.add(""+i)
+//        }
+//        Log.d("jdsijfsi",""+arrayList.size)
+//        digitalNewAdapter?.setNewData(arrayList)
+        OkHttpUtils
+                .get()
+                .url("http://liangjian.2858.cn/newnet-football-lottery-recommend/lottery/lotteryResult")
+                .build()
+                .execute(object : StringCallback(){
+                    override fun onResponse(response: String?) {
+
+                        val fromJson = Gson().fromJson(response, LotteryBean::class.java)
+                        val retContent = fromJson.retContent
+                        val list = retContent.list
+                        digitalNewAdapter?.setNewData(list)
+                    }
+
+                    override fun onError(request: Request?, e: Exception?) {
+
+                    }
+
+                })
 
     }
 
