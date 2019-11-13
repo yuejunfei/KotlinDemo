@@ -3,6 +3,8 @@ package com.example.ktdemo.activity
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.danikula.videocache.HttpProxyCacheServer
@@ -16,7 +18,7 @@ import com.newnet.lotteryprinter.adapter.DigitalNewAdapter
 import com.squareup.okhttp.Request
 import com.zhy.http.okhttp.OkHttpUtils
 import com.zhy.http.okhttp.callback.StringCallback
-import kotlinx.android.synthetic.main.activity_main.recycler_list
+import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.Exception
 
 class MainActivity : TransparentActivity() {
@@ -74,6 +76,12 @@ class MainActivity : TransparentActivity() {
         digitalNewAdapter= DigitalNewAdapter(R.layout.item_digital)
         recycler_list?.adapter=digitalNewAdapter
 
+        button1.setOnClickListener {
+             Toast.makeText(this,"1",Toast.LENGTH_SHORT).show()
+        }
+        button2.setOnClickListener {
+            Toast.makeText(this,"2",Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun initBanner() {
