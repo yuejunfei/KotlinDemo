@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+
+    >
+
+    <FrameLayout
+        android:layout_weight="1"
+        android:id="@+id/main_framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+       >
+
+    </FrameLayout>
+
+
+    <RadioGroup
+
+        android:id="@+id/rg_tabs"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="75dp">
+
+
+        <RadioButton
+            android:background="@drawable/tab_fb_selector"
+            android:checked="true"
+            android:id="@+id/rg_tabs_one"
+            android:text="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:button="@null"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"  />
+
+        <RadioButton
+            android:background="@drawable/tab_fb_selector2"
+            android:text="2"
+            android:id="@+id/rg_tabs_two"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:button="@null"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"  />
+        <RadioButton
+            android:background="@drawable/tab_fb_selector3"
+            android:text="3"
+            android:id="@+id/rg_tabs_three"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:button="@null"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+        <RadioButton
+            android:background="@drawable/tab_fb_selector4"
+            android:id="@+id/rg_tabs_four"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:text="4"
+            android:button="@null"
+            android:gravity="center" />
+
+
+
+    </RadioGroup>
+
+
+
+</LinearLayout>
