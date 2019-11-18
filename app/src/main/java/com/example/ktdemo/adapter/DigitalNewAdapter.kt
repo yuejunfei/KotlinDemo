@@ -25,6 +25,7 @@ class DigitalNewAdapter : BaseQuickAdapter<X, BaseViewHolder> {
      */
     override fun convert(helper: BaseViewHolder, item: X?) {
       helper.setText(R.id.tv_zi_item, item!!.result)
+        helper.addOnClickListener(R.id.tv_zi_item)
     }
 
 }
